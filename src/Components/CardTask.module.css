@@ -1,0 +1,45 @@
+.containerCardTask{
+    display:flex;
+    flex-direction:center;
+    align-items:center;
+    margin-top:1rem
+}
+.taskCard{
+    display:flex;
+    width:46rem;
+    border-radius:8px;
+    background:var(--gray-500);
+    padding: 1rem;
+    align-items:center;
+    justify-content:space-between;
+    font-size:0.875rem;
+
+}
+.buttonAndText{
+    display:flex;
+    flex-direction:flex-start;
+    align-items:center;
+    gap:1rem;
+    background: transparent;
+}
+.taskCard p{
+    background:transparent;
+    line-height:1rem;
+    
+}
+.buttonSelect{
+    background-color: var(--blue)
+}
+
+.buttonSelecteNone {
+    border-radius:999px;
+    width:25px;
+    height:1.5rem;
+    border: 2px solid var(--blue);
+    background:transparent;
+    background-color:none;
+}
+.taskCard > button[type= 'submit']{
+    border:none;
+    background:transparent;
+}
