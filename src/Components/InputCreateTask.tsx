@@ -13,8 +13,9 @@ export function InputCreateTask(){
     const [newTask, setNewTask] = useState('')
 
     function handleNewTask (event: ChangeEvent<HTMLInputElement>){
+
         setNewTask(event.target.value)
-    }
+}
 
     function insertNewTaskInList (event: FormEvent){
         event.preventDefault()
@@ -33,6 +34,8 @@ export function InputCreateTask(){
 
     const countTaskCreate = taskDescription.length
     
+    const isNewTaskIsEmpty = newTask.length === 0
+    
     return(
         <div className={styles.containerOfCardTaskCenter}>
 
@@ -41,6 +44,7 @@ export function InputCreateTask(){
                 onChange={handleNewTask}
                 type="text" 
                 value={newTask}
+                required={isNewTaskIsEmpty}
                 placeholder='Adicione uma nova tarefa' 
                 name="task" />
                 <button 

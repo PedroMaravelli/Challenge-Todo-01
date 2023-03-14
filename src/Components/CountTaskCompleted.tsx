@@ -23,9 +23,6 @@ export function CountTaskCompleted (props: PropsCountTask){
                 </div>
 
             </div>
-            
-           
-            
         </div>
     )
 }
