@@ -2,14 +2,20 @@ import styles from './CardTask.module.css'
 import removeTask from '../assets/removeTask.svg'
 import { FocusEvent, useEffect, useState } from 'react'
 import { TaskProvider } from '../contexts/contextTask'
+import { Trash } from 'phosphor-react';
 
 interface PropsTaskCard {
-    contentTask: string
+    contentTask: string,
+    onDeleteComment: (comment: string) => void;
 }
 
 
 
-export function CardTask (props: PropsTaskCard){
+export function CardTask ({contentTask, onDeleteComment}: PropsTaskCard){
+
+    function handleDeleteComment (){
+        onDeleteComment(contentTask)
+    }
 
 
     return(
@@ -18,11 +24,15 @@ export function CardTask (props: PropsTaskCard){
                 <div className={styles.buttonAndText}>
                     <button className={styles.buttonSelecteNone}></button>
                 
-                    <p>{props.contentTask}</p>
+                    <p>{contentTask}</p>
 
                 </div>
                     
-                <button type='submit'><img src={removeTask}></img></button>
+                <button 
+                type='submit'
+                onClick={handleDeleteComment}
+
+                ><Trash size={16}></Trash></button>
             </div>
 
         </div>

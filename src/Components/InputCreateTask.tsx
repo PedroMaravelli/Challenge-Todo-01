@@ -22,6 +22,16 @@ export function InputCreateTask(){
         setNewTask('')
         
     }
+
+    function deleteComment (commentDelete: string){
+        const taskWithoutDeleteOne = taskDescription.filter((task)=>{
+            return task !== commentDelete
+        })
+
+        setTaskDescription(taskWithoutDeleteOne)
+    }
+
+    const countTaskCreate = taskDescription.length
     
     return(
         <div className={styles.containerOfCardTaskCenter}>
@@ -38,11 +48,11 @@ export function InputCreateTask(){
                     >Criar
                     <img src={criar}></img></button>
             </form>
-            <CountTaskCompleted></CountTaskCompleted>
+            <CountTaskCompleted countTaskCreate={countTaskCreate}></CountTaskCompleted>
             {
                 taskDescription.map((task)=>{
                     return(
-                        <CardTask contentTask={task}></CardTask>
+                        <CardTask contentTask={task} onDeleteComment={deleteComment}></CardTask>
                     )
                 })
             }

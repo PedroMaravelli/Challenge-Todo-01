@@ -3,17 +3,19 @@ import { useState } from 'react'
 import { CardTask } from './CardTask'
 import styles from './CountTaskCompleted.module.css'
 
+interface PropsCountTask {
+    countTaskCreate:number
+}
 
 
-
-export function CountTaskCompleted (){
+export function CountTaskCompleted (props: PropsCountTask){
 
     return(
         <div className={styles.containerMaids}>
             <div className={styles.maidsTasks}>
                 <div className={styles.countTasks}>
                     <strong>Tarefas criadas</strong>
-                    <p>5</p>
+                    <p>{props.countTaskCreate}</p>
                 </div>
                 <div className={styles.taskCompleted}>
                     <strong >Concluídas</strong>

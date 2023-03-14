@@ -39,7 +39,13 @@
     background:transparent;
     background-color:none;
 }
-.taskCard > button[type= 'submit']{
+.taskCard > button{
     border:none;
+    color: var(--gray-400);
+    cursor:pointer;
     background:transparent;
+
+}
+.taskCard > button :hover{
+    color: var(--danger)
 }
