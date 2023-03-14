@@ -3,14 +3,7 @@ import React, { useState, createContext, ReactNode, SetStateAction, Context} fro
 
 
 export interface ContextTaskProps {
-    taskDescription: string[],
-    idTask: number,
-    newTask: string,
-    setIdTask: React.Dispatch<SetStateAction<number>>,
-    setTaskDescription: React.Dispatch<SetStateAction<Array<string>>>,
-    setNewTask: (value: React.SetStateAction<string>) => void,
-
-    
+    isDone: boolean;
 }
 
 
@@ -23,21 +16,14 @@ export const ContextTask = createContext({} as ContextTaskProps)
 
 
 export function TaskProvider ({children}: TaskProviderProps)  {
-    const [taskDescription, setTaskDescription] = useState([''])
-    const [idTask, setIdTask] = useState(0)
-    const [newTask, setNewTask] = useState('')
+    
+    const isDone = false
 
    
 
     return(
         <ContextTask.Provider value={{
-            taskDescription,
-            idTask,
-            newTask,
-            setIdTask,
-            setTaskDescription,
-            setNewTask
-            
+            isDone
         }}>
         {children}</ContextTask.Provider>
 

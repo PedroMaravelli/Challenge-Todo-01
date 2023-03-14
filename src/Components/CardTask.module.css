@@ -31,13 +31,14 @@
     background-color: var(--blue)
 }
 
-.buttonSelecteNone {
+.buttonSelectNone {
     border-radius:999px;
     width:25px;
     height:1.5rem;
     border: 2px solid var(--blue);
     background:transparent;
     background-color:none;
+    cursor:pointer;
 }
 .taskCard > button{
     border:none;

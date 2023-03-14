@@ -22,8 +22,11 @@ export function CardTask ({contentTask, onDeleteComment}: PropsTaskCard){
         <div className={styles.containerCardTask}>
             <div className={styles.taskCard}>
                 <div className={styles.buttonAndText}>
-                    <button className={styles.buttonSelecteNone}></button>
-                
+                    <button 
+                        
+                        type='button'  
+                        className={styles.buttonSelectNone}></button>
+                    
                     <p>{contentTask}</p>
 
                 </div>
