@@ -1,37 +1,15 @@
-import React, { useState, createContext, ReactNode, SetStateAction, Context} from "react";
+import React, { useState, createContext, ReactNode} from "react";
 
 
 
 export interface ContextTaskProps {
-    isDone: boolean;
+    isDone: number;
+    toggleDone?: () => void;
 }
 
 
-interface TaskProviderProps {
-    children: ReactNode
+const DEFAULT_PROPS  = {
+    isDone: 0
 }
 
-export const ContextTask = createContext({} as ContextTaskProps)
-
-
-
-export function TaskProvider ({children}: TaskProviderProps)  {
-    
-    const isDone = false
-
-   
-
-    return(
-        <ContextTask.Provider value={{
-            isDone
-        }}>
-        {children}</ContextTask.Provider>
-
-    )
-
-    
-
-}
-
-
-
+export const ContextTask = createContext<ContextTaskProps>(DEFAULT_PROPS)

@@ -4,21 +4,26 @@ import { Header } from './Components/Header'
 import { InputCreateTask } from './Components/InputCreateTask'
 import { CountTaskCompleted } from './Components/CountTaskCompleted'
 import { CardTask } from './Components/CardTask'
-import { TaskProvider } from './contexts/contextTask'
+import { ContextTask } from './contexts/contextTask'
 
 
 function App() {
 
 
   return (
-    <TaskProvider>
+    <ContextTask.Provider
+      value={{
+        isDone:0,
+        
+      }}
+    >
 
         <body>
           <Header/>
           <InputCreateTask />
 
         </body>
-    </TaskProvider>
+    </ContextTask.Provider>
   )
 }
 
